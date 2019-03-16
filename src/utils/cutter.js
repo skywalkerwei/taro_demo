@@ -13,7 +13,6 @@ export default class Poster {
     // this.scale = Taro.getStorageSync('scale') || 1
   }
 
-
   // 背景
   // drawBackground = (img, x, y) => {
   //   const w = this.width * this.scale

@@ -25,4 +25,4 @@ export const logError = (name, action, info) => {
     info = JSON.stringify(info)
   }
 
-
+}
