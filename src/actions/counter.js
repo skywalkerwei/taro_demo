@@ -14,6 +14,7 @@ export const add = () => {
     type: ADD
   }
 }
+
 export const minus = () => {
   return {
     type: MINUS
@@ -28,6 +29,7 @@ export function asyncAdd() {
     }, 2000)
   }
 }
+
 // 请求api
 export const list = createApiAction(LIST, params => api.get('NervJS/taro/issues', params))
 export default bindActionCreators({

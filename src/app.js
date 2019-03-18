@@ -6,7 +6,7 @@ import Index from './pages/index'
 
 import configStore from './store'
 
-import './app.styl'
+import './app.scss'
 
 const store = configStore
 

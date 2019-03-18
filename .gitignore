@@ -1,6 +1,10 @@
 dist/
+/nbproject/
+.idea
+.vscode
 .temp/
 .rn_temp/
+.vscode
 node_modules/
 img/
 package-lock.json
