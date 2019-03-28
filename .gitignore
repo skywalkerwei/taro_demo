@@ -8,3 +8,4 @@ dist/
 node_modules/
 img/
 package-lock.json
+.DS_Store
