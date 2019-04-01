@@ -2,14 +2,14 @@ import Taro, { Component } from '@tarojs/taro'
 import { View, Button, Text } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
 
-import { add, minus, asyncAdd } from '../../actions/counter'
+import { add, minus, asyncAdd } from '../../../actions/counter'
 import { AtTimeline } from 'taro-ui'
 //import '../../../node_modules/taro-ui/dist/style/index.scss'
 import "taro-ui/dist/style/components/timeline.scss";
 import "taro-ui/dist/style/components/icon.scss";
 
 
-import './index.scss'
+import './index.styl'
 
 
 @connect(({ counter }) => ({
