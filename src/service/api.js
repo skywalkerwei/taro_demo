@@ -2,7 +2,7 @@ import Taro from '@tarojs/taro'
 import { HTTP_STATUS } from '../const/status'
 import { base } from './config'
 import { logError } from '../utils'
-
+import { getAccessToken} from '../utils/common'
 const token = ''
 
 export default {
@@ -10,6 +10,8 @@ export default {
     let { url, data } = params
     // let token = getApp().globalData.token
     // if (!token) login()
+    let accesstoken = getAccessToken();
+    // console.log('accessToken',accesstoken);
     console.log('params', params)
     let contentType = 'application/x-www-form-urlencoded'
     contentType = params.contentType || contentType
@@ -19,7 +21,7 @@ export default {
       url: base + url,
       data: data,
       method: method,
-      header: { 'content-type': contentType, 'token': token },
+      header: { 'content-type': contentType, 'token': token,'accesstoken':accesstoken },
       success(res) {
         if (res.statusCode === HTTP_STATUS.NOT_FOUND) {
           return logError('api', '请求资源不存在')
@@ -28,6 +30,7 @@ export default {
         } else if (res.statusCode === HTTP_STATUS.FORBIDDEN) {
           return logError('api', '没有权限访问')
         } else if (res.statusCode === HTTP_STATUS.SUCCESS) {
+          console.log(res.data);
           return res.data
         }
       },
