@@ -1,0 +1,27 @@
+$background-color = #ccc
+$red = #f00 - 40%
+//add(a, b)
+//  if a is a 'unit' and b is a 'unit'
+//    a + b px
+//  else
+//    (error)
+add(a, b = a)
+  a = unit(a, px)
+  b = unit(b, px)
+  a + b
+pad(types = padding, n = 5px)
+  if padding in types
+    padding n
+  if margin in types
+    margin n
+
+
+.index
+  pad()
+  pad(margin)
+  //pad(padding margin, 10px)
+.numList
+  background-color: $background-color
+  padding: add(10, 5)
+  .numItem
+    color: $red

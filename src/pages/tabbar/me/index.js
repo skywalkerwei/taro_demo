@@ -2,8 +2,7 @@ import Taro, { Component } from '@tarojs/taro'
 import { View, Button, Text } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
 import { AtCountdown } from 'taro-ui'
-import { add, minus, asyncAdd } from '../../actions/counter'
-import '../../../node_modules/taro-ui/dist/style/index.scss'
+import { add, minus, asyncAdd } from '../../../actions/counter'
 import './index.styl'
 
 @connect(({ counter }) => ({
@@ -32,7 +31,8 @@ class Me extends Component {
 
   componentWillUnmount () { }
 
-  componentDidShow () { }
+  componentDidShow () {
+  }
 
   componentDidHide () { }
 
@@ -44,11 +44,11 @@ class Me extends Component {
         <Button className='dec_btn' onClick={this.props.asyncAdd}>me</Button>
         <View><Text>{this.props.counter.num}</Text></View>
         <View><Text>Hello, World</Text></View>
-        <AtCountdown
-          format={{ hours: ':', minutes: ':', seconds: '' }}
-          seconds={10}
-          onTimeUp={this.onTimeUp.bind(this)}
-        />
+        {/*<AtCountdown*/}
+          {/*format={{ hours: ':', minutes: ':', seconds: '' }}*/}
+          {/*seconds={10}*/}
+          {/*onTimeUp={this.onTimeUp.bind(this)}*/}
+        {/*/>*/}
       </View>
     )
   }

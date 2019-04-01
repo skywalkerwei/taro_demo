@@ -1,41 +1,9 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Button, Text } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
-
-// import { add, minus, asyncAdd, list } from '../../actions/counter'
-import counterAction from '../../actions/counter'
-
+import counterAction from '../../../actions/counter'
 import './index.styl'
 
-
-// @connect(({ counter }) => ({
-//   counter
-// }),(dispatch) => ({
-//   add() {
-//     dispatch(add())
-//   },
-//   dec() {
-//     dispatch(minus())
-//   },
-//   asyncAdd() {
-//     dispatch(asyncAdd())
-//   },
-//   // list() {
-//   //   dispatch(list())
-//   // }
-// }))
-
-
-// @connect(
-//   state => ({
-//     list: state.counter.list,
-//   }),
-//   (dispatch) => ({
-//     getList(params) {
-//       dispatch(list(params))
-//     }
-//   })
-// )
 class Index extends Component {
 
   config = {
@@ -64,7 +32,8 @@ class Index extends Component {
 
   }
 
-  componentDidShow() { }
+  componentDidShow() {
+  }
 
   componentDidHide() { }
 
@@ -107,6 +76,7 @@ class Index extends Component {
             })
           }
         </View>
+
       </View >
     )
   }
