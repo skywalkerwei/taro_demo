@@ -3,8 +3,13 @@ import { View, Button, Text } from '@tarojs/components'
 import { connect } from '@tarojs/redux'
 
 import { add, minus, asyncAdd } from '../../actions/counter'
+import { AtTimeline } from 'taro-ui'
+//import '../../../node_modules/taro-ui/dist/style/index.scss'
+import "taro-ui/dist/style/components/timeline.scss";
+import "taro-ui/dist/style/components/icon.scss";
 
-import './index.styl'
+
+import './index.scss'
 
 
 @connect(({ counter }) => ({
@@ -20,6 +25,7 @@ import './index.styl'
     dispatch(asyncAdd())
   }
 }))
+
 class Me extends Component {
 
     config = {
@@ -44,6 +50,15 @@ class Me extends Component {
         <Button className='dec_btn' onClick={this.props.asyncAdd}>me</Button>
         <View><Text>{this.props.counter.num}</Text></View>
         <View><Text>Hello, World</Text></View>
+<AtTimeline 
+  items={[
+    { title: '刷牙洗脸' }, 
+    { title: '吃早餐' }, 
+    { title: '上班' }, 
+    { title: '睡觉' }
+  ]}
+>
+</AtTimeline>
       </View>
     )
   }

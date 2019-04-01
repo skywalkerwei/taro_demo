@@ -31,7 +31,7 @@ export function asyncAdd() {
 }
 
 // 请求api
-export const list = createApiAction(LIST, params => api.get('NervJS/taro/issues', params))
+export const list = createApiAction(LIST, params => api.get('common/test', params))
 export default bindActionCreators({
   list,
   add,

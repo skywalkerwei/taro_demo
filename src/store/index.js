@@ -6,6 +6,6 @@ import rootReducer from '../reducers'
 const middlewares = [
   thunkMiddleware,
   createLogger()
-]
+];
 
 export default createStore(rootReducer, applyMiddleware(...middlewares))
