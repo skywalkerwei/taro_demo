@@ -13,18 +13,11 @@ class Index extends Component {
     navigationBarTitleText: '个人中心'
   }
 
-  constructor () {
-    super(...arguments)
+  constructor (props) {
+    super(props)
     this.state = {
       current: 3
     }
-    const {tabbarStore } = this.props
-   
-    Taro.eventCenter.on('login', (tag)=>{
-        console.log("Taro.eventCenter.on 个人中心",tag);
-        tabbarStore.changeA();
-
-    })
   }
 
   handleClick (value) {
@@ -34,7 +27,7 @@ class Index extends Component {
     switch (value) {
       case 1:
           Taro.redirectTo({
-              url: '../release/index'
+            url: '../release/index'
           })
           break;          
       default:
@@ -42,14 +35,17 @@ class Index extends Component {
     }    
   }
 
-
-  componentWillMount () { }
+  componentWillMount () {}
 
   componentWillReact () {
-    console.log('componentWillRect')
+    // console.log('componentWillRect')
   }
 
-  componentDidMount () { }
+  componentDidMount () {
+    Taro.eventCenter.on('login', (tag)=>{
+      console.log("Taro.eventCenter.on login",tag);
+    })
+  }
 
   componentWillUnmount () { 
     Taro.eventCenter.off();
@@ -70,8 +66,6 @@ class Index extends Component {
     console.log(tabbarStore.list);
     tabbarStore.changeB()
   }
-
-
 
   render () {
     const { tabbarStore: { list } } = this.props

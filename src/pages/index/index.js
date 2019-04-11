@@ -32,7 +32,7 @@ class Index extends Component {
     counterStore.increment()
     userStore.login();
     console.log(tabbarStore.list);
-    tabbarStore.changeA()
+    // tabbarStore.changeA()
     Taro.eventCenter.trigger('login','xmsb')
   }
 
