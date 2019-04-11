@@ -3,13 +3,14 @@ import { HTTP_STATUS } from '../const/status'
 import { base } from './config'
 import { logError } from '../utils'
 import { getAccessToken} from '../utils/common'
-const token = ''
+
 
 export default {
   baseOptions(params, method = 'GET') {
     let { url, data } = params
-    // let token = getApp().globalData.token
-    // if (!token) login()
+    let token = Taro.getStorageSync('token');
+    // console.log(token);
+    // if (!token) this.login();
     let accesstoken = getAccessToken();
     // console.log('accessToken',accesstoken);
     console.log('params', params)
@@ -47,5 +48,8 @@ export default {
   post: function (url, data, contentType) {
     let params = { url, data, contentType }
     return this.baseOptions(params, 'POST')
+  },
+  login(){
+    console.log('login ing');
   }
 }

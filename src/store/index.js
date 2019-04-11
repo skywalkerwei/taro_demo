@@ -1,11 +1,11 @@
-import { createStore, applyMiddleware } from 'redux'
-import thunkMiddleware from 'redux-thunk'
-import { createLogger } from 'redux-logger'
-import rootReducer from '../reducers'
 
-const middlewares = [
-  thunkMiddleware,
-  createLogger()
-];
+import counterStore from './counter'
+import userStore from './user'
+import tabbarStore from './tabbar'
 
-export default createStore(rootReducer, applyMiddleware(...middlewares))
+
+export default  {
+  counterStore,
+  userStore,
+  tabbarStore
+}
